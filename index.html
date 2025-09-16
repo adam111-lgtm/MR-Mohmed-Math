@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="img/mrmath-removebg-preview-modified.png"
+    />
+    <meta name="description" content="مستر محمد فتحي — مدرس الرياضيات. دروس وشروحات مبسطة في مادة الرياضيات لجميع المراحل التعليمية مع تدريبات وأساليب مذاكرة فعالة.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مستر محمد فتحي — مدرس الرياضة</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Cairo", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #f4f6f9;
+        color: #333;
+        line-height: 1.8;
+      }
+
+      header {
+        background: linear-gradient(to right, #2c3e50, #34495e);
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      header h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      header p {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        background: #34495e;
+        text-align: center;
+        padding: 1.2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: bold;
+        font-size: 1.3rem;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      section {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: auto;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+      }
+
+      section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #2c3e50;
+        font-size: 2.5rem;
+      }
+
+      .home {
+        text-align: center;
+      }
+
+      .home img {
+        width: 250px;
+        height: 250px;
+        /* border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); */
+        margin: auto;
+        animation: move 1s alternate infinite linear;
+      }
+
+      .about,
+      .vision,
+      .lessons,
+      .reviews,
+      .articles,
+      .gallery,
+      .contact {
+        background: white;
+        border-radius: 15px;
+        padding: 3rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .about p,
+      .vision p,
+      .articles p {
+        font-size: 1.3rem;
+        text-align: justify;
+      }
+      article h4 {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+      .lessons ul {
+        list-style: none;
+        font-size: 1.3rem;
+      }
+
+      .lessons li {
+        padding: 0.5rem 0;
+      }
+
+      .reviews blockquote {
+        background: #f9f9f9;
+        padding: 1.5rem;
+        border-bottom: 5px solid #2c3e50;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact input,
+      .contact textarea {
+        padding: 15px;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: border 0.3s;
+        font-size: 1rem;
+      }
+
+      .contact input:focus,
+      .contact textarea:focus {
+        border-color: #2c3e50;
+      }
+
+      .contact button,
+      .whatsapp-btn {
+        background: #2c3e50;
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        text-align: center;
+        margin-top: 1rem;
+        text-decoration: none;
+      }
+
+      .contact button:hover,
+      .whatsapp-btn:hover {
+        background: #f39c12;
+      }
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
+      article {
+        line-height: 2;
+      }
+      /* ---------------------- */
+      /* موبايل صغير */
+      @media (max-width: 576px) {
+        header h1 {
+          font-size: 2rem;
+        }
+        header p {
+          font-size: 1rem;
+        }
+        nav a {
+          display: block;
+          margin: 10px 0;
+          font-size: 1.1rem;
+        }
+        section {
+          padding: 2rem 1rem;
+          width: 100%;
+        }
+        section h2 {
+          font-size: 1.8rem;
+        }
+        .home img {
+          width: 180px;
+          height: 180px;
+        }
+        .about p,
+        .vision p,
+        .articles p,
+        .lessons ul {
+          font-size: 1rem;
+        }
+      }
+
+      /* تابلت */
+      @media (min-width: 577px) and (max-width: 768px) {
+        header h1 {
+          font-size: 2.8rem;
+        }
+        header p {
+          font-size: 1.4rem;
+        }
+        nav a {
+          font-size: 1.1rem;
+          margin: 0 10px;
+        }
+        section {
+          padding: 3rem 1.5rem;
+        }
+        section h2 {
+          font-size: 2rem;
+        }
+        .home img {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      /* لابتوب */
+      @media (min-width: 769px) and (max-width: 1200px) {
+        header h1 {
+          font-size: 3.2rem;
+        }
+        header p {
+          font-size: 1.6rem;
+        }
+        nav a {
+          font-size: 1.2rem;
+          margin: 0 15px;
+        }
+        section {
+          padding: 3.5rem 2rem;
+        }
+      }
+
+      /* شاشات كبيرة */
+      @media (min-width: 1201px) {
+        header h1 {
+          font-size: 4rem;
+        }
+        header p {
+          font-size: 1.8rem;
+        }
+        section {
+          max-width: 1400px;
+          margin: auto;
+          padding: 4rem 2rem;
+        }
+      }
+      /* nav الأساسي مرن */
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* عشان لو الشاشة صغيرة أوي ينزل سطر */
+        gap: 10px;
+      }
+
+      /* موبايل صغير */
+      @media (max-width: 576px) {
+        nav {
+          gap: 5px;
+        }
+        nav a {
+          font-size: 0.9rem;
+          margin: 0;
+        }
+        nav a::after {
+          content: " | ";
+          margin-right: 2px;
+        }
+      }
+
+      /* تابلت */
+      @media (min-width: 577px) and (max-width: 768px) {
+        nav a {
+          font-size: 1rem;
+          margin: 0 8px;
+        }
+      }
+
+      /* لابتوب */
+      @media (min-width: 769px) and (max-width: 1200px) {
+        nav a {
+          font-size: 1.1rem;
+          margin: 0 12px;
+        }
+      }
+      @keyframes move {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-10%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="home">
+      <h1>مستر محمد فتحي</h1>
+      <p>مدرس مادة الرياضة</p>
+    </header>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#about">من هو</a>
+      <a href="#vision">الرؤية</a>
+      <a href="#lessons">الدروس</a>
+      <a href="#reviews">آراء الطلاب</a>
+      <a href="#articles">المقالات</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+
+    <!-- الصفحة الرئيسية -->
+    <section class="home">
+      <img
+        id="target"
+        src="img/mrmathnotbg.png"
+        alt="صورة الأستاذ مستر محمد فتحي"
+      />
+      <div class="home-text">
+        <h2>أهلاً بكم في موقع الأستاذ مستر محمد فتحي</h2>
+        <p>مدرس مادة الرياضيات — خبرة في التدريس لجميع المراحل التعليمية.</p>
+      </div>
+    </section>
+
+    <!-- باقي الأقسام -->
+    <section id="about" class="about">
+      <h2>عن مستر محمد فتحي</h2>
+      <p>
+        مستر محمد فتحي مدرس رياضة ذو خبرة واسعة في تدريس الرياضيات للمرحلة
+        الإعدادية والثانوية. يعمل على تبسيط المفاهيم الرياضية وربطها بالحياة
+        اليومية لجعلها أكثر متعة وفائدة للطلاب.
+      </p>
+    </section>
+
+    <section id="vision" class="vision">
+      <h2>الرؤية والرسالة</h2>
+      <p>
+        رؤيتي هي أن أجعل الرياضيات مادة محبوبة لكل الطلاب. رسالتي أن أساعد كل
+        طالب على بناء قاعدة قوية في التفكير المنطقي وحل المشكلات. وان احقق نسبة
+        نجاح %100 لطلابي.
+      </p>
+    </section>
+
+    <section id="lessons" class="lessons">
+      <h2>الدروس والمناهج</h2>
+      <ul>
+        <li>المرحلة الإعدادية: الجبر والهندسة والإحصاء.</li>
+        <li>المرحلة الثانوية: التفاضل والتكامل، الجبر والهندسة الفراغية.</li>
+        <li>دروس خاصة فردية وجماعية.</li>
+      </ul>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <h2>آراء الطلاب</h2>
+      <blockquote>
+        <h3>محمد سراج الدين</h3>
+        🌟 "الأستاذ محمد شرحه ممتاز، بيخلي الرياضيات سهلة جدًا."
+      </blockquote>
+      <blockquote>
+        <h3>مصطفي ابراهيم</h3>
+        🌟 "اتعلمت منه طرق جديدة لحل المسائل بسرعة."
+      </blockquote>
+      <blockquote>
+        <h3>قدوس عبد السلام</h3>
+        🌟 "أفضل مدرس رياضة اتعلمت معاه."
+      </blockquote>
+    </section>
+
+    <section id="articles" class="articles">
+      <h2>مقالات ونصائح</h2>
+      <article>
+        <h4>📌 كيف تذاكر الرياضيات بطريقة فعالة</h4>
+        <p>
+          الرياضيات من المواد التي تحتاج إلى أسلوب مختلف في المذاكرة، فهي مادة
+          تطبيقية تعتمد على الفهم والممارسة أكثر من اعتمادها على الحفظ. كثير من
+          الطلاب يواجهون صعوبة معها لأنهم يحاولون دراستها بنفس طريقة المواد
+          النظرية، بينما في الحقيقة الأمر يتطلب منهجاً عملياً وتدريباً مستمراً.
+        </p>
+        <p>
+          الخطوة الأولى لنجاحك في الرياضيات هي أن تفهم الأساسيات جيداً. فهذه
+          المادة تراكمية، أي أن كل موضوع يرتبط بما قبله، لذلك لا يمكن الانتقال
+          إلى مسائل معقدة إذا لم تكن لديك قاعدة قوية في العمليات البسيطة
+          والقوانين الأساسية. بمجرد أن تستوعب القاعدة، يمكنك التدرج نحو
+          المستويات الأعلى بثقة.
+        </p>
+        <p>
+          أما طريقة التعلم نفسها، فهي لا تأتي من مجرد قراءة الدروس أو حفظ
+          القوانين، بل من الحل العملي المتكرر. يجب أن تحاول حل التمارين بنفسك
+          بعد فهم الأمثلة، لأنك بهذه الطريقة تدرّب عقلك على خطوات التفكير
+          الصحيحة. وحتى عندما تخطئ، فإن اكتشاف الخطأ وتصحيحه يعد جزءاً أساسياً
+          من عملية التعلم.
+        </p>
+        <p>
+          تنظيم الوقت في المذاكرة أيضاً يلعب دوراً مهماً. من الأفضل أن تخصص
+          جزءاً من وقتك لفهم المفاهيم، ثم وقتاً أطول لحل التمارين، وأخيراً بعض
+          الوقت لمراجعة أخطائك وتصحيحها. هذا التوازن يجعلك تجمع بين الفهم
+          والتطبيق والتعلم من التجربة.
+        </p>
+        <p>
+          الاستمرارية هي سر التفوق في الرياضيات. من الأفضل أن تذاكرها بشكل يومي
+          ولو لفترة قصيرة بدلاً من تركها حتى ليلة الامتحان، لأن الممارسة
+          المستمرة تساعد العقل على بناء روابط ذهنية قوية وفهم أعمق.
+        </p>
+        <p>
+          في النهاية، يمكن القول إن المذاكرة الفعّالة للرياضيات تقوم على الفهم
+          الحقيقي، الممارسة الكثيرة، والاستمرارية.
+        </p>
+
+        <h4>📌 أفضل الطرق لحل مسائل الامتحانات</h4>
+        <p>
+          عند التعامل مع مسائل الامتحانات يجب أن تبدأ أولاً بقراءة السؤال كاملاً
+          وبتركيز لفهم المطلوب بالتحديد قبل البدء في الحل. من الأفضل أن تبدأ
+          بالأسئلة السهلة التي تعرفها جيداً حتى تكسب ثقة، ثم تنتقل تدريجياً إلى
+          الأسئلة الأصعب. حاول تقسيم وقتك على جميع الأسئلة ولا تضيّع وقتاً
+          طويلاً في سؤال واحد فقط. وفي النهاية، إذا بقي وقت راجع إجاباتك وحاول
+          أن تتأكد من العمليات الحسابية والقوانين المستخدمة.
+        </p>
+
+        <h4>📌 أهمية الرياضيات في الحياة اليومية</h4>
+        <p>
+          الرياضيات ليست مجرد مادة دراسية مرتبطة بالامتحانات، بل هي أداة
+          نستخدمها يومياً في حياتنا العملية. فهي تدخل في حساب الأموال وإدارة
+          الميزانيات، وفي فهم الخصومات والعروض عند التسوق، وفي تحديد الوقت
+          والمسافات. كما أن الرياضيات أساس في مجالات العلوم والهندسة
+          والتكنولوجيا. وحتى في التفكير اليومي، فإنها تساعدنا على تطوير مهارات
+          المنطق والتحليل وحل المشكلات بطريقة منظمة.
+        </p>
+      </article>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>تواصل مع المدرس</h2>
+      <form onsubmit="sendWhatsApp(event)">
+        <input type="text" id="name" placeholder="الاسم الكامل" required />
+        <textarea
+          id="message"
+          rows="5"
+          placeholder="اكتب رسالتك هنا"
+          required
+        ></textarea>
+        <button type="submit">إرسال عبر واتساب</button>
+      </form>
+      <a
+        class="whatsapp-btn"
+        href="https://wa.me/+20 155 957 2726"
+        target="_blank"
+        >تواصل مباشرة عبر واتساب</a
+      >
+    </section>
+
+    <footer>
+      <p>جميع الحقوق محفوظة © 2025 — مستر محمد فتحي</p>
+    </footer>
+    <script>
+      function sendWhatsApp(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const message = document.getElementById("message").value;
+
+        const phoneNumber = "+20 155 957 2726"; // ← ضع رقم الواتساب الحقيقي هنا
+        const text = `مرحباً أستاذ محمد،\nاسمي: ${name}\nرسالتي: ${message}`;
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+          text
+        )}`;
+
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
